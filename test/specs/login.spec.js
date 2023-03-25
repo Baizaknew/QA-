@@ -11,7 +11,7 @@ describe("Login to Navigator", ()=>{
 
     it("Success login", async ()=>{
         await LoginPage.open();
-        awa it LoginPage.doLogin('Admin', 'Admin@Navi')
+        await LoginPage.doLogin('Admin', 'Admin@Navi')
         await browser.pause(5000);
         await expect(browser).toHaveUrlContaining('clients');
     })
