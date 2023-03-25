@@ -1,4 +1,5 @@
 # Navigator Loyalty Program Autotest Project
+## Relax and do not judge strictly)
 This project contains automated tests for the Navigator loyalty program.
 
 ### Prerequisites
