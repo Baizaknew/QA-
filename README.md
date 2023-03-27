@@ -16,11 +16,6 @@ npm install
 ### How to Run Tests
 To run all the tests in the project, run:
 ```
-npm test
+npm run wdio
 ```
-This will launch Chrome and run the tests in the tests directory.
-To run a specific test file, run:
-```
-npm test -- tests/test-file.js
-```
-Replace test-file.js with the actual name of the test file you want to run.
+
