@@ -116,9 +116,20 @@ class ClientPage {
     // get selectors for filter functionalities
     get dropFilterButton() {
         return $('.actions button:nth-child(3)')
+        
     }
+    get gender () { return $('<app-client-sex-filter>') };
+    get female () { return $('.options-wrap.sex.active .options-container .option-wrap .option:nth-child(3)') };
+    get male () { return $('.options-wrap.sex.active .options-container .option-wrap .option:nth-child(2)') };
+    get all () { return $('.options-wrap.sex.active .options-container .option-wrap .option:nth-child(1)') };
+    get undefined () { return $('.options-wrap.sex.active .options-container .option-wrap .option:nth-child(4)') };
+
+
     get saveFilterTemplate() {
         return $('.actions button:nth-child(2)')
+    }
+    get searchButtonFilter() {
+        return $('.actions button:nth-child(1)')
     }
     get moreInfoFilter(){
         return $('div.header-category ul li:nth-child(3)')
@@ -142,6 +153,7 @@ class ClientPage {
     get searchField() {
         return $('[id="mat-input-0"]')
     }
+    get genderField(){return $('[class="options-wrap sex"]')}
 
     async openForm() {
         await $('button.clients-add-user-dialog').click();
@@ -283,22 +295,27 @@ class ClientPage {
     async pressYesToDelete(){
         await this.yesToDeleteTemplate.click();
     }
-
-
-    async chooseJobFilter() {
-        await this.jobFieldFilter.click()
-        await this.jobOptionFilter.click();
+    async checkGender(gender) {
+        await this.gender.click();
+        if(gender == 1){
+            this.all.click()
+        }
+        if(gender ==2){
+            this.male.click()
+        }
+        if(gender ==3){
+            this.female.click()
+        }
+        if(gender ==4){
+            this.undefined.click()
+        }
+        await browser.pause(3000);
+        await this.gender.click();
+        await browser.pause(3000);
     }
-
-    async clickOnTotalCheck() {
-        await this.totalCheck.click()
+    async searchFilter(){
+        await this.searchButtonFilter.click()
     }
-
-    async blackListFieldClick() {
-        await this.blackListField.click()
-        await this.blackListOption.click()
-    }
-
 
 }
 

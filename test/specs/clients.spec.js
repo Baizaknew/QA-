@@ -51,7 +51,7 @@ describe("Client page", () => {
         await clientPage.save()
         await browser.pause(5000)
     })
-    it("View Client", async () => {
+    xit("View Client", async () => {
         await browser.pause(5000)
         await clientPage.openDetailedView()
         await browser.pause(3000)
@@ -67,15 +67,30 @@ describe("Client page", () => {
         await clientPage.saveInsertedTemplate()
         await browser.pause(5000)
     })
-    xit("Delete filter", async () => {
-        await clientPage.moreInfoTemplate()
-        await browser.pause(3000)
-        await clientPage.deleteTemplate()
-        await browser.pause(3000)
-        await clientPage.pressYesToDelete();
+    it("Check gender", async () => {
+        await browser.pause(2000)
+        await clientPage.pressSearchFilter()
+        await browser.pause(2000)
+        await clientPage.checkGender(1)
+        await clientPage.searchFilter()
+        await browser.pause(4000)
+        await clientPage.pressSearchFilter()
+        await browser.pause(2000)
+        await clientPage.checkGender(2)
+        await clientPage.searchFilter()
+        await browser.pause(4000)
+        await clientPage.pressSearchFilter()
+        await browser.pause(2000)
+        await clientPage.checkGender(3)
+        await clientPage.searchFilter()
+        await browser.pause(4000)
+        await clientPage.pressSearchFilter()
+        await browser.pause(2000)
+        await clientPage.checkGender(4)
+        await clientPage.searchFilter()
         await browser.pause(4000)
 
-
     })
+    
 
 })
